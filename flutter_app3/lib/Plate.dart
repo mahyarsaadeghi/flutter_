@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 // import 'Drawer.dart';
 import 'package:flutter/rendering.dart';
+
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
+ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/animation.dart';
 
 bool _radio;
@@ -31,7 +33,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     animationController =
-        new AnimationController(vsync: this, duration: Duration(seconds: 5));
+    new AnimationController(vsync: this, duration: Duration(seconds: 5));
     animation = IntTween(begin: 1, end: 255).animate(animationController)
       ..addListener(() {
         setState(() {});
@@ -68,14 +70,14 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
   void sendData(String data) {
     alert = AlertDialog(
       title: Text('dsan'),
-      // content: SpinKitWave(color: Color.fromARGB(255, 255, 45, 54)),
+//       content: SpinKitWave(color: Color.fromARGB(255, 255, 45, 54)),
     );
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return alert;
         });
-    channel.sink.add(data);
+//    channel.sink.add(data);
   }
 
   void showBottomBar() {
@@ -112,6 +114,10 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
   }
 
   Widget widgetPlate(BuildContext context) {
+    double sizeOfbalaja = 0.1;
+    double sizeOfChokbalaja = 0.01;
+    double sizeOfbok = 0.132;
+
     Widget plate = Card(
       margin: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
       child: Container(
@@ -182,11 +188,11 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                           children: <Widget>[
                             Expanded(
                                 child: Text(
-                              "Remainng",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 240, 220),
-                                  fontSize: 15),
-                            )),
+                                  "Remainng",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 240, 220),
+                                      fontSize: 15),
+                                )),
                             Expanded(
                               child: Text(
                                 "01:22:07",
@@ -209,11 +215,11 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                           children: <Widget>[
                             Expanded(
                                 child: Text(
-                              "Layer",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 240, 220),
-                                  fontSize: 15),
-                            )),
+                                  "Layer",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 240, 220),
+                                      fontSize: 15),
+                                )),
                             Expanded(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -223,7 +229,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                        Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 18),
                                   ),
                                   Text(
@@ -231,7 +237,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                        Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 14),
                                   ),
                                   Text(
@@ -239,7 +245,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                        Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 18),
                                   )
                                 ],
@@ -263,7 +269,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                       "Printer Tempretaure",
                       textAlign: TextAlign.left,
                       style:
-                          TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                      TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                     alignment: Alignment.centerLeft,
                   ),
@@ -275,7 +281,7 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                       "Printer Tempretaure",
                       textAlign: TextAlign.right,
                       style:
-                          TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                      TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                     alignment: Alignment.centerRight,
                   ),
@@ -302,18 +308,18 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
               children: <Widget>[
                 Expanded(
                     child: Container(
-                  child: RaisedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "START",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 9.5),
-                    ),
-                    color: Color.fromARGB(255, 6, 190, 188),
-                  ),
-                  margin: EdgeInsets.only(left: 8.0, right: 5.0),
-                )),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "START",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 9.5),
+                        ),
+                        color: Color.fromARGB(255, 6, 190, 188),
+                      ),
+                      margin: EdgeInsets.only(left: 8.0, right: 5.0),
+                    )),
                 Expanded(
                   child: Container(
                     child: RaisedButton(
@@ -331,18 +337,18 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                 ),
                 Expanded(
                     child: Container(
-                  child: RaisedButton(
-                    onPressed: () {},
-                    child: Text(
-                      "PAUSE",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 9.5),
-                    ),
-                    color: Color.fromARGB(255, 6, 190, 188),
-                  ),
-                  margin: EdgeInsets.only(left: 5.0, right: 5.0),
-                )),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "PAUSE",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 9.5),
+                        ),
+                        color: Color.fromARGB(255, 6, 190, 188),
+                      ),
+                      margin: EdgeInsets.only(left: 5.0, right: 5.0),
+                    )),
                 Expanded(
                   child: Container(
                       child: RaisedButton(
@@ -390,171 +396,246 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Flexible(
-                    child: RadioListTile(
-                      value: null,
-                      activeColor: Color.fromARGB(255, 255, 255, 255),
-                      groupValue: null,
-                      onChanged: (c) {
-                        print(c.toString());
-                      },
-                      title: Text(
-                        "salam",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 12),
-                      ),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Radio(
+                              value: null,
+                              groupValue: null,
+                              activeColor: Color.fromARGB(255, 255, 255, 255),
+                              onChanged: (c) {
+                                print(c.toString());
+                              }),
+                        ),
+                        Expanded(
+                            child: Text(
+                              "salam",
+                              style: TextStyle(color: Colors.white, fontSize: 12),
+                            ))
+                      ],
+                    ),
+//                    RadioListTile(
+//                      value: null,
+//                      activeColor: Color.fromARGB(255, 255, 255, 255),
+//                      groupValue: null,
+//                      onChanged: (c) {
+//                        print(c.toString());
+//                      },
+//                      title: Text(
+//                        "salam",
+//                        style: TextStyle(
+//                            color: Color.fromARGB(255, 255, 255, 255),
+//                            fontSize: 12),
+//                      ),
+//                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Radio(
+                              value: null,
+                              groupValue: null,
+                              activeColor: Color.fromARGB(255, 255, 255, 255),
+                              onChanged: (c) {
+                                print(c.toString());
+                              }),
+                        ),
+                        Expanded(
+                            child: Text(
+                              "salam",
+                              style: TextStyle(color: Colors.white, fontSize: 12),
+                            ))
+                      ],
                     ),
                   ),
-                  Flexible(
-                    child: RadioListTile(
-                      value: null,
-                      activeColor: Color.fromARGB(255, 255, 255, 255),
-                      groupValue: null,
-                      onChanged: (c) {
-                        print(c.toString());
-                      },
-                      title: Text(
-                        "salam",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 12),
-                      ),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Radio(
+                              value: null,
+                              groupValue: null,
+                              activeColor: Color.fromARGB(255, 255, 255, 255),
+                              onChanged: (c) {
+                                print(c.toString());
+                              }),
+                        ),
+                        Expanded(
+                            child: Text(
+                              "salam",
+                              style: TextStyle(color: Colors.white, fontSize: 12),
+                            ))
+                      ],
                     ),
                   ),
-                  Container(
-                      child: Flexible(
-                    child: RadioListTile(
-                      value: null,
-                      activeColor: Color.fromARGB(255, 255, 255, 255),
-                      groupValue: null,
-                      onChanged: (c) {
-                        print(c.toString());
-                      },
-                      title: Text(
-                        "salam",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 12),
-                      ),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Radio(
+                              value: null,
+                              groupValue: null,
+                              activeColor: Color.fromARGB(255, 255, 255, 255),
+                              onChanged: (c) {
+                                print(c.toString());
+                              }),
+                        ),
+                        Expanded(
+                            child: Text(
+                              "salam",
+                              style: TextStyle(color: Colors.white, fontSize: 12),
+                            ))
+                      ],
                     ),
-                  )),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Radio(
+                              value: null,
+                              groupValue: null,
+                              activeColor: Color.fromARGB(255, 255, 255, 255),
+                              onChanged: (c) {
+                                print(c.toString());
+                              }),
+                        ),
+                        Expanded(
+                            child: Text(
+                              "salam",
+                              style: TextStyle(color: Colors.white, fontSize: 12),
+                            ))
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Center(
-                        child: Row(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+//                Container(
+//                  width: MediaQuery.of(context).size.width * sizeOfbok,
+//                  color: Colors.red,
+//                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Row(
                           children: <Widget>[
                             Container(
                               color: Color.fromARGB(255, 6, 190, 188),
                               height: 70,
                               alignment: Alignment.centerLeft,
-                              margin: EdgeInsets.only(left: 8),
+//                            margin: EdgeInsets.only(left: 8),
                               child: Icon(
                                 Icons.arrow_back_ios,
-                                size: 25,
+                                size: (MediaQuery.of(context).size.width *
+                                    sizeOfbalaja) *
+                                    0.6,
                                 color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             Container(
-                              width: 30,
-                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
                               height: 30,
-                              child: Text(
-                                "0.5\nmm",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 10),
-                                textAlign: TextAlign.center,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               color: Color.fromARGB(255, 6, 190, 255),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             Container(
-                              width: 30,
-                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
                               height: 30,
-                              child: Text(
-                                "0.5\nmm",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 10),
-                                textAlign: TextAlign.center,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               color: Color.fromARGB(255, 6, 190, 255),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             Container(
-                              width: 30,
-                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
                               height: 30,
-                              child: Text(
-                                "0.5\nmm",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 10),
-                                textAlign: TextAlign.center,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               color: Color.fromARGB(255, 6, 190, 255),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             Container(
-                              width: 30,
-                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
                               height: 30,
-                              child: Text(
-                                "0.5\nmm",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 10),
-                                textAlign: TextAlign.center,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               color: Color.fromARGB(255, 6, 190, 255),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             Container(
-                              width: 30,
-                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
                               height: 30,
-                              child: Text(
-                                "0.5\nmm",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 10),
-                                textAlign: TextAlign.center,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               color: Color.fromARGB(255, 6, 190, 255),
                             ),
                             Container(
-                              child: SizedBox(),
                               width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
@@ -564,140 +645,154 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                               alignment: Alignment.centerLeft,
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                size: 25,
+                                size: (MediaQuery.of(context).size.width *
+                                    sizeOfbalaja) *
+                                    0.6,
                                 color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                      Container(
-                        height: 4.0,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            color: Color.fromARGB(255, 6, 190, 188),
-                            height: 70,
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.only(left: 8),
-                            child: Icon(
-                              Icons.arrow_back_ios,
-                              size: 25,
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              color: Color.fromARGB(255, 6, 190, 188),
+                              height: 70,
+                              alignment: Alignment.centerLeft,
+//                            margin: EdgeInsets.only(left: 8),
+                              child: Icon(
+                                Icons.arrow_back_ios,
+                                size: (MediaQuery.of(context).size.width *
+                                    sizeOfbalaja) *
+                                    0.6,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                            Container(
+                              width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            width: 30,
-                            alignment: Alignment.center,
-                            height: 30,
-                            child: Text(
-                              "0.5\nmm",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 10),
-                              textAlign: TextAlign.center,
+                            Container(
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
+                              height: 30,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              color: Color.fromARGB(255, 6, 190, 255),
                             ),
-                            color: Color.fromARGB(255, 6, 190, 255),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            width: 30,
-                            alignment: Alignment.center,
-                            height: 30,
-                            child: Text(
-                              "0.5\nmm",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                            color: Color.fromARGB(255, 6, 190, 255),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            width: 30,
-                            alignment: Alignment.center,
-                            height: 30,
-                            child: Text(
-                              "0.5\nmm",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                            color: Color.fromARGB(255, 6, 190, 255),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            width: 30,
-                            alignment: Alignment.center,
-                            height: 30,
-                            child: Text(
-                              "0.5\nmm",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                            color: Color.fromARGB(255, 6, 190, 255),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            width: 30,
-                            alignment: Alignment.center,
-                            height: 30,
-                            child: Text(
-                              "0.5\nmm",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                            color: Color.fromARGB(255, 6, 190, 255),
-                          ),
-                          Container(
-                            child: SizedBox(),
-                            width: 4,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Container(
-                            color: Color.fromARGB(255, 6, 190, 188),
-                            height: 70,
-                            alignment: Alignment.centerLeft,
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              size: 25,
+                            Container(
+                              width: 4,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ],
-              ),
+                            Container(
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
+                              height: 30,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              color: Color.fromARGB(255, 6, 190, 255),
+                            ),
+                            Container(
+                              width:4,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
+                              height: 30,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              color: Color.fromARGB(255, 6, 190, 255),
+                            ),
+                            Container(
+                              width: 4,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
+                              height: 30,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              color: Color.fromARGB(255, 6, 190, 255),
+                            ),
+                            Container(
+                              width: 4,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width *
+                                  sizeOfbalaja,
+                              height: 30,
+                              child: Center(
+                                child: Text(
+                                  "0.5\nmm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              color: Color.fromARGB(255, 6, 190, 255),
+                            ),
+                            Container(
+                              width:4,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            Container(
+                              color: Color.fromARGB(255, 6, 190, 188),
+                              height: 70,
+                              alignment: Alignment.centerLeft,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: (MediaQuery.of(context).size.width *
+                                    sizeOfbalaja) *
+                                    0.6,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+
+                ),
+//                SizedBox(
+//                  width: MediaQuery.of(context).size.width*sizeOfbok,
+//                ),
+              ],
             ),
             SizedBox(
               height: 10,
@@ -754,15 +849,15 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                     child: DropdownButton(
                         hint: dropValue == null
                             ? Text(
-                                "Amount",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14),
-                              )
+                          "Amount",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 14),
+                        )
                             : Text(dropValue,
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14)),
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 14)),
                         isExpanded: true,
                         items: <String>['10 mm', '20 mm', '30 mm', '40 mm']
                             .map<DropdownMenuItem<String>>((String value) {
@@ -783,33 +878,33 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
                   ),
                   Expanded(
                       child: RaisedButton(
-                    onPressed: () {
-                      print(null);
-                    },
-                    color: Color.fromARGB(255, 6, 190, 188),
-                    child: Text(
-                      "Extrude",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 12),
-                    ),
-                  )),
+                        onPressed: () {
+                          print(null);
+                        },
+                        color: Color.fromARGB(255, 6, 190, 188),
+                        child: Text(
+                          "Extrude",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 12),
+                        ),
+                      )),
                   SizedBox(
                     width: 8.0,
                   ),
                   Expanded(
                       child: RaisedButton(
-                    onPressed: () {
-                      print(null);
-                    },
-                    color: Color.fromARGB(255, 6, 190, 188),
-                    child: Text(
-                      "RETRACT",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 12),
-                    ),
-                  )),
+                        onPressed: () {
+                          print(null);
+                        },
+                        color: Color.fromARGB(255, 6, 190, 188),
+                        child: Text(
+                          "RETRACT",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 12),
+                        ),
+                      )),
                   SizedBox(
                     width: 8.0,
                   ),
@@ -844,8 +939,8 @@ class _Plate extends State<Plate> with SingleTickerProviderStateMixin {
     return Scaffold(
         appBar: _showAppbar
             ? AppBar(
-                backgroundColor: Color.fromARGB(255, 35, 42, 52),
-              )
+          backgroundColor: Color.fromARGB(255, 35, 42, 52),
+        )
             : null,
         // drawer: CustomisedDrawer(),
         backgroundColor: Color.fromARGB(255, 35, 42, 52),
